@@ -10,3 +10,6 @@ Slime trail: Jonah
 Notification: Charlie
 
 Registration page: TBD
+
+vertical alignment:
+https://stackoverflow.com/questions/42252443/vertical-align-center-in-bootstrap
