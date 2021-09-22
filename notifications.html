@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link href="icons.css" rel="stylesheet">
+
+        <title>Notifications</title>
+    </head>
+    <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand link" href="#">SlugFest</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <u1 class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="feed.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link aria-hidden" data-bs-toggle="modal" data-bs-target="#composeSlime">Compose</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="KevinAngstadt.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="notifications.html">Notifications</a>
+                    </li>
+                </u1>
+                <!-- TODO make this not a huge bar across the entire screen-->
+                <form class="input-group w-25">
+                    <span class="input-group-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                          </svg>
+                    </span>
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <!-- TODO insert arrow icon w/ color in css -->
+                    <button class="btn btn-info" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-bar-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.146 3.646a.5.5 0 0 0 0 .708L7.793 8l-3.647 3.646a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708 0zM11.5 1a.5.5 0 0 1 .5.5v13a.5.5 0 0 1-1 0v-13a.5.5 0 0 1 .5-.5z"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <!-- Modal -->
+    <div class="modal fade" id="composeSlime" tabindex="-1" aria-labelledby="composeSlimeLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="composeSlimeLabel">Compose Slime</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <textarea class="form-control" aria-label="With textarea">Compose Slime</textarea>
+                  </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Slime -></button>
+            </div>
+        </div>
+        </div>
+    </div>
+    </nav>
+    <div class="col-xl-6 col-lg-8 col-11 offset-xl-3 offset-lg-2 offset-1  mt-3">
+        <h2 class="mb-3">Notifications</h2>
+        <div id="notification-container">
+            <div class="row mt-3">
+                <div class="col-1 d-flex flex-row-reverse align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-recycle icon-green" viewBox="0 0 16 16">
+                        <path d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242-2.532-4.431zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24l2.552-4.467zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.498.498 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244l-1.716-3.004z"/>
+                      </svg>
+                </div>
+                <div class="col-2">
+                    <img src="assets/profile/lisa.jpeg" class="img-thumbnail" alt="...">
+                </div>
+            </div>
+            <div class="row">
+                <span class="border-bottom border-2">
+                <div class="col offset-1">
+                    <div class="row mt-2">
+                        <p><strong>Lisa Torrey</strong> reslimed you</p>
+                    </div>
+                    <div class="row">
+                        <p>Hello World <span class="text-primary text-decoration-underline">#firstslime</span></p>
+                    </div>
+                </div>
+                </span>
+            </div>
+        </div>
+        <div id="notification-container">
+            <div class="row mt-3">
+                <div class="col-1 d-flex flex-row-reverse align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-recycle icon-green" viewBox="0 0 16 16">
+                        <path d="M9.302 1.256a1.5 1.5 0 0 0-2.604 0l-1.704 2.98a.5.5 0 0 0 .869.497l1.703-2.981a.5.5 0 0 1 .868 0l2.54 4.444-1.256-.337a.5.5 0 1 0-.26.966l2.415.647a.5.5 0 0 0 .613-.353l.647-2.415a.5.5 0 1 0-.966-.259l-.333 1.242-2.532-4.431zM2.973 7.773l-1.255.337a.5.5 0 1 1-.26-.966l2.416-.647a.5.5 0 0 1 .612.353l.647 2.415a.5.5 0 0 1-.966.259l-.333-1.242-2.545 4.454a.5.5 0 0 0 .434.748H5a.5.5 0 0 1 0 1H1.723A1.5 1.5 0 0 1 .421 12.24l2.552-4.467zm10.89 1.463a.5.5 0 1 0-.868.496l1.716 3.004a.5.5 0 0 1-.434.748h-5.57l.647-.646a.5.5 0 1 0-.708-.707l-1.5 1.5a.498.498 0 0 0 0 .707l1.5 1.5a.5.5 0 1 0 .708-.707l-.647-.647h5.57a1.5 1.5 0 0 0 1.302-2.244l-1.716-3.004z"/>
+                      </svg>
+                </div>
+                <div class="col-2">
+                    <img src="assets/profile/ed.png" class="img-thumbnail" alt="...">
+                </div>
+            </div>
+            <div class="row">
+                <span class="border-bottom border-2">
+                <div class="col offset-1">
+                    <div class="row mt-2">
+                        <p><strong>Ed Harcourt</strong> reslimed you</p>
+                    </div>
+                    <div class="row">
+                        <p>Hello World <span class="text-primary text-decoration-underline">#firstslime</span></p>
+                    </div>
+                </div>
+                </span>
+            </div>
+        </div>
+        <div id="notification-container">
+            <div class="row mt-3">
+                <div class="col-1 d-flex flex-row-reverse align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-heart-fill icon-red" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                      </svg>
+                </div>
+                <div class="col-2">
+                    <img src="assets/profile/ed.png" class="img-thumbnail" alt="...">
+                </div>
+            </div>
+            <div class="row">
+                <span class="border-bottom border-2">
+                <div class="col offset-1">
+                    <div class="row mt-2">
+                        <p><strong>Ed Harcourt</strong> favorited your Slime</p>
+                    </div>
+                    <div class="row">
+                        <p><span class="text-primary text-decoration-underline">@ed</span> SlugFest is way better than any bird-based platforms</p>
+                    </div>
+                </div>
+                </span>
+            </div>
+        </div>
+        <div id="notification-container">
+            <div class="row mt-3">
+                <div class="col-1 d-flex flex-row-reverse align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chat-right-fill icon-blue" viewBox="0 0 16 16">
+                        <path d="M14 0a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"/>
+                      </svg>
+                </div>
+                <div class="col-2">
+                    <img src="assets/profile/ed.png" class="img-thumbnail" alt="...">
+                </div>
+            </div>
+            <div class="row">
+                <span class="border-bottom border-2">
+                <div class="col offset-1">
+                    <div class="row mt-2">
+                        <p><strong>Ed Harcourt</strong> replied to you</p>
+                    </div>
+                    <div class="row">
+                        <p><span class="text-primary text-decoration-underline">@KevinAAngstadt</span> Why am I on here?</p>
+                    </div>
+                </div>
+                </span>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  </body>
+</html>
