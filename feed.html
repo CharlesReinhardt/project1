@@ -1,446 +1,733 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
     <head>
-
         <meta charset="utf-8">
-
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <!-- BOOTSTRAP CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link rel="stylesheet" href="pageStyle.css">
 
-        <!-- BOOTSTRAP CSS -->
-
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-
-
-        <!-- BOOTSTRAP JS -->
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-      
-
-        <title>Slugfest</title>
-
+        <title>SlugFest</title>
     </head>
 
     <!--MENU BAR, INSPIRED FROM THE NAVBAR EXAMPLE IN THE BOOTSTRAP DOCS-->
-
+    <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-
         <div class="container-fluid">
-
             <a class="navbar-brand link" href="#">SlugFest</a>
-
             <!-- navbar-collapse aligns navbar elements from a central parent point.-->
-
-            <div class="collapse navbar-collapse "id="navbarSupportedContent">
-
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <u1 class="navbar-nav me-auto mb-2 mb-lg-0">
-
                     <li class="nav-item">
-
-                        <a class="nav-link active" href="feed.html">Home</a>
-
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
-
                     <li class="nav-item">
-
                         <a class="nav-link aria-hidden" data-bs-toggle="modal" data-bs-target="#composeSlime">Compose</a>
-
                     </li>
-
                     <li class="nav-item">
-
-                        <a class="nav-link aria-hidden" href="kevinangstadt.html">Profile</a>
-
+                        <a class="nav-link" href="KevinAngstadt.html">Profile</a>
                     </li>
-
                     <li class="nav-item">
-
-                        <a class="nav-link aria-hidden" href="notifications.html">Notifications</a>
-
+                        <a class="nav-link" href="notifications.html">Notifications</a>
                     </li>
-
                 </u1>
-
-                <form class="d-flex">
-
-                    <input class="form-control me-auto" type="search" placeholder="Search" aria-label="Search">
-
-                    <button class="btn btn-outline-secondary" type="submit">
-
-                       <img src="profile/search.svg" alt="...">
-
+                <form class="input-group w-25">
+                    <span class="input-group-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                          </svg>
+                    </span>
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-info" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-bar-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.146 3.646a.5.5 0 0 0 0 .708L7.793 8l-3.647 3.646a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708 0zM11.5 1a.5.5 0 0 1 .5.5v13a.5.5 0 0 1-1 0v-13a.5.5 0 0 1 .5-.5z"/>
+                        </svg>
                     </button>
-
                 </form>
-
             </div>
-
         </div>
-
+        <!-- Modal -->
+        <div class="modal fade" id="composeSlime" tabindex="-1" aria-labelledby="composeSlimeLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="composeSlimeLabel">Compose Slime</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group">
+                            <textarea class="form-control" aria-label="With textarea">Compose Slime</textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <!-- TODO change -> to a real arrow icon -->
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                        Slime 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                        </svg>
+                    </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
-  
-    <section>
-
-
-
-        <div class="compose-header">
-
+    <body>
+        <!-- THE COMPOSE SLIME FORMAT -->
+        <header style="  margin-top: 10%; margin-bottom:50px">
             <h1 class="text-center">Welcome to SlugFest!</h1>
-
-        </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="composeSlime" tabindex="-1" aria-labelledby="composeSlimeLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="composeSlimeLabel">Compose Slime</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group">
-                    <textarea class="form-control" aria-label="With textarea">Compose Slime</textarea>
-                  </div>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Slime -></button>
-            </div>
-        </div>
-        </div>
-    </div>
-
-        <div class="compose-wrapper">
-
-            <div class="row">
-
+        </header>
+            <div class="row" style="margin-top: 50px;margin-left:5%;margin-bottom:15%">
                 <div class="col-md-5">
-
                     <div class="compose-imgcontain">
-
-                        <img class="compose-img" src="profile/kevin.jpeg" alt="...">
-
+                        <img style="max-width:100%;" src="profile/kevin.jpeg" alt="...">
                     </div>
-
                 </div>
-
-                <div class="col-md-6">
-
+                <div class="col-md-7">
                     <div class="compose-textcontain">
-
-                        <textarea placeholder="Compose Slime"></textarea>
-
-                        <button class="btn btn-primary" type="submit">submit
-
-                           <img src="profile/play-fill.svg" alt="...">
-
-                        </button>
-
+                        <textarea style="resize:none; width:inherit"  rows="4" placeholder="Compose Slime"></textarea>
+                        <button class="btn btn-primary" type="submit" style="display:inline-flex">submit
+                            <img src="profile/play-fill.svg" alt="...">
+                         </button>
                     </div>
-
                 </div>
+            </div> 
 
-            </div>
-
-
-
-        </div>
-
-
-
+        <!-- A STANDARD "SLIME" CARD -->
         <div class="slime-wrapper">
-
             <div class="row g-0">
-
                 <div class="col-md-4 align-self-center" style="width: 25%">
-
                     <div class="slime-imgcontain">
-
-                        <img class="slime-img" src="profile/ed.png" alt="...">
-
+                        <img style="margin-left:1%; max-width:100%; margin-top:10%;" src="profile/choong-soo.png" alt="...">
                     </div>
-
                 </div>
-
-                <div class="col-lg-7 align-self-center">
-
-                    <p><b>Ed Harcourt</b><span class="user">@edharcourt</span><span class="user">September 20, 2020</span><p>
-
-                    <p>Sabbatical is nice. I'm just <span class="hashtag">#relaxing</span></p>
-
+                <div class="col-lg-7 align-self-center" style="margin-left:-10%">
+                    <p><b>Choong-Soo</b><span class="user" style="color:gray">@ChoongSL - 1hr</span></p>
+                    <p>On campus (September 6, 2021 at 09:41AM)</p>
                 </div>
-
             </div>
-
             <div class="row">
-
                 <div class="col-sm-2">
-
-                    <button class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:30px">
-
+                    <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:10px">
                         <img src="profile/chat-right.svg" alt="...">
-
-                    </button>
-
+                    </li>
                     <p style="display:inline-block">0</p>
-
                 </div>
-
                 <div class="col-sm-2">
-
-                    <button class="btn btn-outline-secondary:focus" style="margin-right:50px">
-
-                        <img src="profile/reply.svg" alt="..."> 
-
-                    </button> 
-
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                        <img src="profile/recycle.svg" alt="..."> 
+                    </li> 
+                    <p style="display:inline-block">0</p>
                 </div>
-
                 <div class="col-sm-2">
-
-                    <button class="btn btn-outline-danger" style="margin-right:50px">
-
-                        <img src="profile/heart.svg" alt="...">
-
-                    </button>
-
+                    <li class="btn" style="margin-left:-10px;">
+                        <img src="profile/heart.svg" alt="..." style="color:red">
+                    </li>
+                    <p style="display:inline-block">0</p>
                 </div>
-
                 <div class="col-sm-2">
-
-                    <button class="btn btn-outline-secondary:focus" style="margin-left:200px">
-
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
                         <img src="profile/upload.svg" alt="...">
-
-                    </button>
-
+                    </li>
                 </div>
-
             </div>
-
         </div>
 
         <div class="slime-wrapper">
-
             <div class="row g-0">
-
                 <div class="col-md-4 align-self-center" style="width: 25%">
-
                     <div class="slime-imgcontain">
-
-                        <img class="slime-img" src="profile/lisa.jpeg" alt="...">
-
+                        <img style="margin-left:1%; max-width:100%; margin-top:10%;" src="profile/choong-soo.png" alt="...">
                     </div>
-
                 </div>
-
-                <div class="col-lg-7 align-self-center">
-
-                    <p><b>LisaTorrey</b><span class="user">@LTorrey</span><span class="user">September 17, 2020</span><p>
-
-                    <p>Big-O notation is fun! :)</p>
-
+                <div class="col-lg-7 align-self-center" style="margin-left:-10%">
+                    <p><b>Choong-Soo</b><span class="user" style="color:gray">@ChoongSL - September 3, 2020</span></p>
+                    <p>Off campus (September 3, 2021 at 02:35PM)</p>
                 </div>
-
             </div>
-
             <div class="row">
-
                 <div class="col-sm-2">
-
-                    <button class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:30px">
-
+                    <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:10px">
                         <img src="profile/chat-right.svg" alt="...">
-
-                    </button>
-
+                    </li>
                     <p style="display:inline-block">0</p>
-
                 </div>
-
                 <div class="col-sm-2">
-
-                    <button class="btn btn-outline-secondary:focus" style="margin-right:50px">
-
-                        <img src="profile/reply.svg" alt="..."> 
-
-                    </button> 
-
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                        <img src="profile/recycle.svg" alt="..."> 
+                    </li> 
+                    <p style="display:inline-block">0</p>
                 </div>
-
                 <div class="col-sm-2">
-
-                    <button class="btn btn-outline-danger" style="margin-right:50px">
-
-                        <img src="profile/heart.svg" alt="...">
-
-                    </button>
-
+                    <li class="btn" style="margin-left:-10px;">
+                        <img src="profile/heart.svg" alt="..." style="color:red">
+                    </li>
+                    <p style="display:inline-block">0</p>
                 </div>
-
                 <div class="col-sm-2">
-
-                    <button class="btn btn-outline-secondary:focus" style="margin-left:200px">
-
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
                         <img src="profile/upload.svg" alt="...">
-
-                    </button>
-
+                    </li>
                 </div>
-
             </div>
-
         </div>
 
         <div class="slime-wrapper">
-
             <div class="row g-0">
-
                 <div class="col-md-4 align-self-center" style="width: 25%">
-
                     <div class="slime-imgcontain">
-
-                        <img class="slime-img" src="profile/choong-soo.png" alt="...">
-
+                        <img style="margin-left:1%; max-width:100%; margin-top:10%;" src="profile/choong-soo.png" alt="...">
                     </div>
-
                 </div>
-
-                <div class="col-lg-7 align-self-center">
-
-                    <p><b>Choong-Soo</b><span class="user">@ChoongSL</span><span class="user">September 10, 2020</span><p>
-
-                    <p>Currently in class (Sep. 10, 9:20AM)./p>
-
+                <div class="col-lg-7 align-self-center" style="margin-left:-10%">
+                    <p><b>Choong-Soo</b><span class="user" style="color:gray">@ChoongSL - September 3, 2020</span></p>
+                    <p>On campus (September 3, 2021 at 09:37AM)</p>
                 </div>
-
             </div>
-
             <div class="row">
-
                 <div class="col-sm-2">
-
-                    <button class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:30px">
-
+                    <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:10px">
                         <img src="profile/chat-right.svg" alt="...">
-
-                    </button>
-
+                    </li>
                     <p style="display:inline-block">0</p>
-
                 </div>
-
                 <div class="col-sm-2">
-
-                    <button class="btn btn-outline-secondary:focus" style="margin-right:50px">
-
-                        <img src="profile/reply.svg" alt="..."> 
-
-                    </button> 
-
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                        <img src="profile/recycle.svg" alt="..."> 
+                    </li> 
+                    <p style="display:inline-block">0</p>
                 </div>
-
                 <div class="col-sm-2">
-
-                    <button class="btn btn-outline-danger" style="margin-right:50px">
-
-                        <img src="profile/heart.svg" alt="...">
-
-                    </button>
-
+                    <li class="btn" style="margin-left:-10px;">
+                        <img src="profile/heart.svg" alt="..." style="color:red">
+                    </li>
+                    <p style="display:inline-block">0</p>
                 </div>
-
                 <div class="col-sm-2">
-
-                    <button class="btn btn-outline-secondary:focus" style="margin-left:200px">
-
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
                         <img src="profile/upload.svg" alt="...">
-
-                    </button>
-
+                    </li>
                 </div>
-
             </div>
-
         </div>
 
         <div class="slime-wrapper">
-
             <div class="row g-0">
-
                 <div class="col-md-4 align-self-center" style="width: 25%">
-
                     <div class="slime-imgcontain">
-
-                        <img class="slime-img" src="profile/kevin.jpeg" alt="...">
-
+                        <img style="margin-left:1%; max-width:100%; margin-top:10%;" src="profile/ed.png" alt="...">
                     </div>
-
                 </div>
-
-                <div class="col-lg-7 align-self-center">
-
-                    <p><b>Kevin Angstadt</b><span class="user">@kandstadt</span><span class="user">September 5, 2020</span><p>
-
-                    <p>Classes are great so far. Web dev is coming along nicely!</p>
-
+                <div class="col-lg-7 align-self-center" style="margin-left:-10%">
+                    <p><b>EdHarcourt</b><span class="user" style="color:gray">@ed - September 3, 2020</span></p>
+                    <p>Sabbatical is super nice. Not a care in the world.</p>
                 </div>
-
             </div>
-
             <div class="row">
-
                 <div class="col-sm-2">
-
-                    <button class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:30px">
-
+                    <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:10px">
                         <img src="profile/chat-right.svg" alt="...">
-
-                    </button>
-
+                    </li>
                     <p style="display:inline-block">0</p>
-
                 </div>
-
                 <div class="col-sm-2">
-
-                    <button class="btn btn-outline-secondary:focus" style="margin-right:50px">
-
-                        <img src="profile/reply.svg" alt="..."> 
-
-                    </button> 
-
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                        <img src="profile/recycle.svg" alt="..."> 
+                    </li> 
+                    <p style="display:inline-block">1</p>
                 </div>
-
                 <div class="col-sm-2">
-
-                    <button class="btn btn-outline-danger" style="margin-right:50px">
-
-                        <img src="profile/heart.svg" alt="...">
-
-                    </button>
-
+                    <li class="btn" style="margin-left:-10px;">
+                        <img src="profile/heart-fill.svg" alt="..." style="color:red">
+                    </li>
+                    <p style="display:inline-block">2</p>
                 </div>
-
                 <div class="col-sm-2">
-
-                    <button class="btn btn-outline-secondary:focus" style="margin-left:200px">
-
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
                         <img src="profile/upload.svg" alt="...">
-
-                    </button>
-
+                    </li>
                 </div>
-
             </div>
-
+        </div>
+        
+        <div class="slime-wrapper">
+            <div class="row g-0">
+                <div class="col-md-4 align-self-center" style="width: 25%">
+                    <div class="slime-imgcontain">
+                        <img style="margin-left:1%; max-width:100%; margin-top:10%;" src="profile/kevin.jpeg" alt="...">
+                    </div>
+                </div>
+                <div class="col-lg-7 align-self-center" style="margin-left:-10%">
+                    <div class="row">
+                        <div class="col-sm-1 align-self-center">
+                            <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                                <img src="profile/recycle.svg" alt="..."> 
+                            </li> 
+                        </div>
+                        <div class="col-lg-7 align-self-center">
+                            <b style="font-weight:normal; font-size:14px">EdHarcourt Reslimed</b>
+                        </div>
+                    </div>
+                    <p><b>KevinAngstadt</b><span class="user" style="color:gray">@KevinAAngstadt - August 30, 2020</span></p>
+                    <p>Hello, World! <span style="color:blue;text-decoration: underline;">#firstslime</span></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:10px">
+                        <img src="profile/chat-right.svg" alt="...">
+                    </li>
+                    <p style="display:inline-block">1</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                        <img src="profile/recycle.svg" alt="..."> 
+                    </li> 
+                    <p style="display:inline-block">3</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn" style="margin-left:-10px;">
+                        <img src="profile/heart-fill.svg" alt="..." style="color:red">
+                    </li>
+                    <p style="display:inline-block">1</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                        <img src="profile/upload.svg" alt="...">
+                    </li>
+                </div>
+            </div>
         </div>
 
-    </section>
+        <div class="slime-wrapper">
+            <div class="row g-0">
+                <div class="col-md-4 align-self-center" style="width: 25%">
+                    <div class="slime-imgcontain">
+                        <img style="margin-left:1%; max-width:100%; margin-top:10%;" src="profile/kevin.jpeg" alt="...">
+                    </div>
+                </div>
+                <div class="col-lg-7 align-self-center" style="margin-left:-10%">
+                    <div class="row">
+                        <div class="col-sm-1 align-self-center">
+                            <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                                <img src="profile/recycle.svg" alt="..."> 
+                            </li> 
+                        </div>
+                        <div class="col-lg-7 align-self-center">
+                            <b style="font-weight:normal; font-size:14px">LisaTorrey Reslimed</b>
+                        </div>
+                    </div>
+                    <p><b>KevinAngstadt</b><span class="user" style="color:gray">@KevinAAngstadt - August 30, 2020</span></p>
+                    <p>Hello, World! <span style="color:blue;text-decoration: underline;">#firstslime</span></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:10px">
+                        <img src="profile/chat-right.svg" alt="...">
+                    </li>
+                    <p style="display:inline-block">1</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                        <img src="profile/recycle.svg" alt="..."> 
+                    </li> 
+                    <p style="display:inline-block">3</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn" style="margin-left:-10px;">
+                        <img src="profile/heart-fill.svg" alt="..." style="color:red">
+                    </li>
+                    <p style="display:inline-block">1</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                        <img src="profile/upload.svg" alt="...">
+                    </li>
+                </div>
+            </div>
+        </div>
 
+        <div class="slime-wrapper">
+            <div class="row g-0">
+                <div class="col-md-4 align-self-center" style="width: 25%">
+                    <div class="slime-imgcontain">
+                        <img style="margin-left:1%; max-width:100%; margin-top:10%;" src="profile/choong-soo.png" alt="...">
+                    </div>
+                </div>
+                <div class="col-lg-7 align-self-center" style="margin-left:-10%">
+                    <p><b>Choong-Soo</b><span class="user" style="color:gray">@ChoongSL - September 2, 2020</span></p>
+                    <p>Off campus (September 2, 2021 at 04:35PM)</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:10px">
+                        <img src="profile/chat-right.svg" alt="...">
+                    </li>
+                    <p style="display:inline-block">0</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                        <img src="profile/recycle.svg" alt="..."> 
+                    </li> 
+                    <p style="display:inline-block">0</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-danger" style="margin-left:-10px">
+                        <img src="profile/heart.svg" alt="...">
+                    </li>
+                    <p style="display:inline-block">0</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                        <img src="profile/upload.svg" alt="...">
+                    </li>
+                </div>
+            </div>
+        </div>
+
+        <div class="slime-wrapper">
+            <div class="row g-0">
+                <div class="col-md-4 align-self-center" style="width: 25%">
+                    <div class="slime-imgcontain">
+                        <img style="margin-left:1%; max-width:100%; margin-top:10%;" src="profile/lisa.jpeg" alt="...">
+                    </div>
+                </div>
+                <div class="col-lg-7 align-self-center" style="margin-left:-10%">
+                    <p><b>LisaTorrey</b><span class="user" style="color:gray">@LTorrey - September 2, 2020</span></p>
+                    <p>It's kinda cool that we have our own in-house Twitter clone. <span style="color:blue; text-decoration:underline">#CSThoughts</span></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:10px">
+                        <img src="profile/chat-right.svg" alt="...">
+                    </li>
+                    <p style="display:inline-block">0</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                        <img src="profile/recycle.svg" alt="..."> 
+                    </li> 
+                    <p style="display:inline-block">0</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn" style="margin-left:-10px;">
+                        <img src="profile/heart-fill.svg" alt="..." style="color:red">
+                    </li>
+                    <p style="display:inline-block">1</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                        <img src="profile/upload.svg" alt="...">
+                    </li>
+                </div>
+            </div>
+        </div>
+
+        <div class="slime-wrapper">
+            <div class="row g-0">
+                <div class="col-md-4 align-self-center" style="width: 25%">
+                    <div class="slime-imgcontain">
+                        <img style="margin-left:1%; max-width:100%; margin-top:10%;" src="profile/choong-soo.png" alt="...">
+                    </div>
+                </div>
+                <div class="col-lg-7 align-self-center" style="margin-left:-10%">
+                    <p><b>Choong-Soo</b><span class="user" style="color:gray">@ChoongSL - September 2, 2020</span></p>
+                    <p>On campus (September 2, 2021 at 09:53AM)</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:10px">
+                        <img src="profile/chat-right.svg" alt="...">
+                    </li>
+                    <p style="display:inline-block">0</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                        <img src="profile/recycle.svg" alt="..."> 
+                    </li> 
+                    <p style="display:inline-block">0</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn" style="margin-left:-10px;">
+                        <img src="profile/heart.svg" alt="..." style="color:red">
+                    </li>
+                    <p style="display:inline-block">0</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                        <img src="profile/upload.svg" alt="...">
+                    </li>
+                </div>
+            </div>
+        </div>
+
+        <div class="slime-wrapper">
+            <div class="row g-0">
+                <div class="col-md-4 align-self-center" style="width: 25%">
+                    <div class="slime-imgcontain">
+                        <img style="margin-left:1%; max-width:100%; margin-top:10%;" src="profile/choong-soo.png" alt="...">
+                    </div>
+                </div>
+                <div class="col-lg-7 align-self-center" style="margin-left:-10%">
+                    <p><b>Choong-Soo</b><span class="user" style="color:gray">@ChoongSL - September 1, 2020</span></p>
+                    <p>Off campus (September 1, 2021 at 04:23PM)</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:10px">
+                        <img src="profile/chat-right.svg" alt="...">
+                    </li>
+                    <p style="display:inline-block">0</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                        <img src="profile/recycle.svg" alt="..."> 
+                    </li> 
+                    <p style="display:inline-block">0</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn" style="margin-left:-10px;">
+                        <img src="profile/heart.svg" alt="..." style="color:red">
+                    </li>
+                    <p style="display:inline-block">0</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                        <img src="profile/upload.svg" alt="...">
+                    </li>
+                </div>
+            </div>
+        </div>
+
+        <div class="slime-wrapper">
+            <div class="row g-0">
+                <div class="col-md-4 align-self-center" style="width: 25%">
+                    <div class="slime-imgcontain">
+                        <img style="margin-left:1%; max-width:100%; margin-top:10%;" src="profile/kevin.jpeg" alt="...">
+                    </div>
+                </div>
+                <div class="col-lg-7 align-self-center" style="margin-left:-10%">
+                    <div class="row">
+                        <div class="col-sm-1 align-self-center">
+                            <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                                <img src="profile/chat-right.svg" alt="..."> 
+                            </li> 
+                        </div>
+                        <div class="col-lg-7 align-self-center">
+                            <b style="font-weight:normal; font-size:14px">KevinAngstadt replied to EdHarcourt</b>
+                        </div>
+                    </div>
+                    <p><b>KevinAngstadt</b><span class="user" style="color:gray">@KevinAAngstadt - September 1, 2020</span></p>
+                    <p><span style="color:blue;text-decoration: underline;">@ed</span> SlugFest is way better than any other bird-based platorms. That's for sure!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:10px">
+                        <img src="profile/chat-right.svg" alt="...">
+                    </li>
+                    <p style="display:inline-block">0</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                        <img src="profile/recycle.svg" alt="..."> 
+                    </li> 
+                    <p style="display:inline-block">0</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn" style="margin-left:-10px;">
+                        <img src="profile/heart-fill.svg" alt="..." style="color:red">
+                    </li>
+                    <p style="display:inline-block">1</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                        <img src="profile/upload.svg" alt="...">
+                    </li>
+                </div>
+            </div>
+        </div>
+
+        <div class="slime-wrapper">
+            <div class="row g-0">
+                <div class="col-md-4 align-self-center" style="width: 25%">
+                    <div class="slime-imgcontain">
+                        <img style="margin-left:1%; max-width:100%; margin-top:10%;" src="profile/kevin.jpeg" alt="...">
+                    </div>
+                </div>
+                <div class="col-lg-7 align-self-center" style="margin-left:-10%">
+                    <div class="row">
+                        <div class="col-sm-1 align-self-center">
+                            <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                                <img src="profile/recycle.svg" alt="..."> 
+                            </li> 
+                        </div>
+                        <div class="col-lg-7 align-self-center">
+                            <b style="font-weight:normal; font-size:14px">KevinAngstadt Reslimed</b>
+                        </div>
+                    </div>
+                    <p><b>KevinAngstadt</b><span class="user" style="color:gray">@KevinAAngstadt - September 1, 2020</span></p>
+                    <p><span style="color:blue;text-decoration: underline;">@ed</span> SlugFest is way better than any other bird-based platorms. That's for sure!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:10px">
+                        <img src="profile/chat-right.svg" alt="...">
+                    </li>
+                    <p style="display:inline-block">0</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                        <img src="profile/recycle.svg" alt="..."> 
+                    </li> 
+                    <p style="display:inline-block">0</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn" style="margin-left:-10px;">
+                        <img src="profile/heart-fill.svg" alt="..." style="color:red">
+                    </li>
+                    <p style="display:inline-block">1</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                        <img src="profile/upload.svg" alt="...">
+                    </li>
+                </div>
+            </div>
+        </div>
+
+        <div class="slime-wrapper">
+            <div class="row g-0">
+                <div class="col-md-4 align-self-center" style="width: 25%">
+                    <div class="slime-imgcontain">
+                        <img style="margin-left:1%; max-width:100%; margin-top:10%;" src="profile/choong-soo.png" alt="...">
+                    </div>
+                </div>
+                <div class="col-lg-7 align-self-center" style="margin-left:-10%">
+                    <p><b>Choong-Soo</b><span class="user" style="color:gray">@ChoongSL - September 1, 2020</span></p>
+                    <p>On campus (September 1, 2021 at 09:49AM)</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:10px">
+                        <img src="profile/chat-right.svg" alt="...">
+                    </li>
+                    <p style="display:inline-block">0</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                        <img src="profile/recycle.svg" alt="..."> 
+                    </li> 
+                    <p style="display:inline-block">0</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn" style="margin-left:-10px;">
+                        <img src="profile/heart.svg" alt="..." style="color:red">
+                    </li>
+                    <p style="display:inline-block">0</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                        <img src="profile/upload.svg" alt="...">
+                    </li>
+                </div>
+            </div>
+        </div>
+
+        <div class="slime-wrapper">
+            <div class="row g-0">
+                <div class="col-md-4 align-self-center" style="width: 25%">
+                    <div class="slime-imgcontain">
+                        <img style="margin-left:1%; max-width:100%; margin-top:10%;" src="profile/ed.png" alt="...">
+                    </div>
+                </div>
+                <div class="col-lg-7 align-self-center" style="margin-left:-10%">
+                    <div class="row">
+                        <div class="col-sm-1 align-self-center">
+                            <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                                <img src="profile/chat-right.svg" alt="..."> 
+                            </li> 
+                        </div>
+                        <div class="col-lg-7 align-self-center">
+                            <b style="font-weight:normal; font-size:14px">EdHarcourt replied to KevinAngstadt</b>
+                        </div>
+                    </div>
+                    <p><b>EdHarcourt</b><span class="user" style="color:gray">@ed - September 1, 2020</span></p>
+                    <p><span style="color:blue;text-decoration: underline;">@KevinAAngstadt</span> Why am I on here?</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:10px">
+                        <img src="profile/chat-right.svg" alt="...">
+                    </li>
+                    <p style="display:inline-block">1</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                        <img src="profile/recycle.svg" alt="..."> 
+                    </li> 
+                    <p style="display:inline-block">1</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn" style="margin-left:-10px;">
+                        <img src="profile/heart.svg" alt="..." style="color:red">
+                    </li>
+                    <p style="display:inline-block">0</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                        <img src="profile/upload.svg" alt="...">
+                    </li>
+                </div>
+            </div>
+        </div>
+
+        <div class="slime-wrapper">
+            <div class="row g-0">
+                <div class="col-md-4 align-self-center" style="width: 25%">
+                    <div class="slime-imgcontain">
+                        <img style="margin-left:1%; max-width:100%; margin-top:10%;" src="profile/kevin.jpeg" alt="...">
+                    </div>
+                </div>
+                <div class="col-lg-7 align-self-center" style="margin-left:-10%">
+                    <p><b>KevinAngstadt</b><span class="user" style="color:gray">@KevinAAngstadt - August 30, 2020</span></p>
+                    <p>Hello, World! <span style="color:blue;text-decoration: underline;">#firstslime</span></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:10px">
+                        <img src="profile/chat-right.svg" alt="...">
+                    </li>
+                    <p style="display:inline-block">1</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                        <img src="profile/recycle.svg" alt="..."> 
+                    </li> 
+                    <p style="display:inline-block">3</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn" style="margin-left:-10px;">
+                        <img src="profile/heart-fill.svg" alt="..." style="color:red">
+                    </li>
+                    <p style="display:inline-block">1</p>
+                </div>
+                <div class="col-sm-2">
+                    <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                        <img src="profile/upload.svg" alt="...">
+                    </li>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    </body>
 </html>

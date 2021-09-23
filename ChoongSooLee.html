@@ -5,60 +5,99 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link rel="stylesheet" href="pageStyle.css">
 
         <title>Choong-Soo Lee</title>
     </head>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand link" href="#">SlugFest</a>
             <!-- navbar-collapse aligns navbar elements from a central parent point.-->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <u1 class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                        <a class="nav-link " aria-current="page" href="feed.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="slimetrail.html">Compose</a>
+                        <a class="nav-link aria-hidden" data-bs-toggle="modal" data-bs-target="#composeSlime">Compose</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Profile</a>
+                        <a class="nav-link" href="#">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="notifications.html">Notifications</a>
+                        <a class="nav-link" href="notifications.html">Notifications</a>
                     </li>
                 </u1>
-                <form class="d-flex">
-                    <input class="form-control me-auto" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-secondary" type="submit">Search
-                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                <form class="input-group w-25">
+                    <span class="input-group-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                          </svg>
+                    </span>
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-info" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-bar-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.146 3.646a.5.5 0 0 0 0 .708L7.793 8l-3.647 3.646a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708 0zM11.5 1a.5.5 0 0 1 .5.5v13a.5.5 0 0 1-1 0v-13a.5.5 0 0 1 .5-.5z"/>
+                        </svg>
                     </button>
                 </form>
             </div>
         </div>
+        <!-- Modal -->
+        <div class="modal fade" id="composeSlime" tabindex="-1" aria-labelledby="composeSlimeLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="composeSlimeLabel">Compose Slime</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group">
+                            <textarea class="form-control" aria-label="With textarea">Compose Slime</textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <!-- TODO change -> to a real arrow icon -->
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                        Slime 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                        </svg>
+                    </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
     <body class="text-left">
-        <div class="row vh-50 vw-100">
-        <div class="col-1"></div>
-            <header class="d-flex flex-row col-auto align-items-left mt-4 ml-4 mb-4">
-            <!-- TODO adjust profile picture height -->
-            <img id="profilepicture" class="img-thumbnail align-start" src="assets/profile/choong-soo.png">
-            <div id="stuffNextToPicture" class="d-inline-block align-items-top">
-                <h1 id="displayname" class="mx-4 mb-2">Choong-Soo Lee</h1>
-                <h5 id="username" class="text-muted mx-4 mb-3">@ChoongSooL</h5>
-                <p id="description" class="mx-4"></p>
-                
-                <p id="joined" class="mx-4 mb-0 text-muted">
+        <header class="row align-items-left mt-4 mb-4">
+            <div class="col-lg-3 col-6 offset-1">
+                <img id="profilepicture" class="img-thumbnail align-start img-fluid" src="assets/profile/choong-soo.png">
+            </div>
+            <div id="stuffNextToPicture" class="col">
+                <div class="row">
+                    <h1 id="displayname" class="mx-4 mb-2">Choong-Soo Lee</h1>
+                </div>
+                <div class="row">
+                    <h5 id="username" class="text-muted mx-4 mb-3">@ChoongSooL</h5>
+                </div>
+                <div class="row">
+                    <p id="description" class="mx-4">
+                    </p>
+                </div>
+                <div class="row">
+                    <p id="joined" class="mx-4 mb-0 text-muted">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
                         <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
                         <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
                     </svg>
                     Joined September 2021</p>
-                <p id="following" class="mx-4 text-muted d-inline"><strong>3</strong> Following</p>
-                <p id="followers" class="text-muted d-inline"><strong>1</strong> Followers</p>
+                </div>
+                <div class="row">
+                    <p id="following-followers" class="mx-4 text-muted"><strong>3</strong> Following &emsp; <strong>1</strong> Followers</p>
+                </div>
             </div>
-            </header>
-        <div class="col"></div>
-        </div>
+        </header>
         <div class="row mt-4">
             <div class="col-3"></div>
             <div class="col-6 d-flex flex-column justify-content-evenly">
@@ -73,126 +112,1025 @@
                         <button class="nav-link" id="favorites-tab" data-bs-toggle="pill" data-bs-target="#favorites" type="button" role="tab" aria-controls="pills-favorites-tab" aria-selected="false">Favorites</button>
                     </li>
                 </ul>
-                <!-- when putting card into here, modify text-center below when trying to center-->
-                <div class="tab-content text-center" id="pills-tabContent">
+                <div class="tab-content" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="slimes" role="tabpanel" aria-labelledby="pills-slimes-tab">
-                        <p>    9. On campus (September 1, 2021 at 09:49AM)
+                        <div class="card mt-3">
 
-                            September 1
-                      
-                            0 replies
-                            0 reslimes
-                            0 favorites
-                      
-                          10. Off campus (September 1, 2021 at 04:23PM)
-                      
-                            September 1
-                      
-                            0 replies
-                            0 reslimes
-                            0 favorites
-                      
-                          11. On campus (September 2, 2021 at 09:53AM)
-                      
-                            September 2
-                      
-                            0 replies
-                            0 reslimes
-                            0 favorites
-                      
-                          12. Off campus (September 2, 2021 at 04:35PM)
-                      
-                            September 2
-                      
-                            0 replies
-                            0 reslimes
-                            0 favorites
-                      
-                          13. On campus (September 3, 2021 at 09:37AM)
-                      
-                            September 3
-                      
-                            0 replies
-                            0 reslimes
-                            0 favorites
-                      
-                          14. Off campus (September 3, 2021 at 02:35PM)
-                      
-                            September 3
-                      
-                            0 replies
-                            0 reslimes
-                            0 favorites
-                      
-                          15. On campus (September 6, 2021 at 09:41AM)
-                      
-                            1 hour ago
-                      
-                            0 replies
-                            0 reslimes
-                            0 favorites
-                        </p>
+                            <div class="card-body">
+                
+                                <div class="row">
+                
+                                    <div class="col-2">
+                
+                                        <img class="img-thumbnail" src="assets/profile/choong-soo.png" alt="...">
+                
+                                    </div>
+                
+                                    <div class="col-10 align-self-center">
+                
+                                        <p><b>Choong-Soo</b><span class="user" style="color:gray">@ChoongSL • 1hr</span></p>
+                
+                                        <p>On campus (September 3, 2021 at 09:41PM)</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:inherit">
+                
+                                            <img src="assets/profile/chat-right.svg" alt="...">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                
+                                            <img src="assets/profile/recycle.svg" alt="..."> 
+                
+                                        </li> 
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn" style="margin-left:-10px;">
+                
+                                            <img src="assets/profile/heart.svg" alt="..." style="color:red">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                
+                                            <img src="assets/profile/upload.svg" alt="...">
+                
+                                        </li>
+                
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                
+                          </div>
+                
+                        <div class="card mt-3">
+                
+                            <div class="card-body">
+                
+                                <div class="row">
+                
+                                    <div class="col-2">
+                
+                                        <img class="img-thumbnail" src="assets/profile/choong-soo.png" alt="...">
+                
+                                    </div>
+                
+                                    <div class="col-10 align-self-center">
+                
+                                        <p><b>Choong-Soo</b><span class="user" style="color:gray">@ChoongSL • September 3</span></p>
+                
+                                        <p>Off campus (September 3, 2021 at 02:35PM)</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:inherit">
+                
+                                            <img src="assets/profile/chat-right.svg" alt="...">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                
+                                            <img src="assets/profile/recycle.svg" alt="..."> 
+                
+                                        </li> 
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn" style="margin-left:-10px;">
+                
+                                            <img src="assets/profile/heart.svg" alt="...">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                
+                                            <img src="assets/profile/upload.svg" alt="...">
+                
+                                        </li>
+                
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                
+                          </div>
+                
+                        <div class="card mt-3">
+                
+                            <div class="card-body">
+                
+                                <div class="row">
+                
+                                    <div class="col-2">
+                
+                                        <img class="img-thumbnail" src="assets/profile/choong-soo.png" alt="...">
+                
+                                    </div>
+                
+                                    <div class="col-10 align-self-center">
+                
+                                        <p><b>Choong-Soo</b><span class="user" style="color:gray">@ChoongSL • September 2</span></p>
+                
+                                        <p>On campus (September 3, 2021 at 09:37PM)</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:inherit">
+                
+                                            <img src="assets/profile/chat-right.svg" alt="...">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                
+                                            <img src="assets/profile/recycle.svg" alt="..."> 
+                
+                                        </li> 
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn" style="margin-left:-10px;">
+                
+                                            <img src="assets/profile/heart.svg" alt="..." style="color:red">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                
+                                            <img src="assets/profile/upload.svg" alt="...">
+                
+                                        </li>
+                
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                
+                          </div>
+
+                          <div class="card mt-3">
+
+                            <div class="card-body">
+                
+                                <div class="row">
+                
+                                    <div class="col-2">
+                
+                                        <img class="img-thumbnail" src="assets/profile/choong-soo.png" alt="...">
+                
+                                    </div>
+                
+                                    <div class="col-10 align-self-center">
+                
+                                        <p><b>Choong-Soo</b><span class="user" style="color:gray">@ChoongSL • September 2</span></p>
+                
+                                        <p>Off campus (September 2, 2021 at 04:53PM)</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:inherit">
+                
+                                            <img src="assets/profile/chat-right.svg" alt="...">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                
+                                            <img src="assets/profile/recycle.svg" alt="..."> 
+                
+                                        </li> 
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn" style="margin-left:-10px;">
+                
+                                            <img src="assets/profile/heart.svg" alt="..." style="color:red">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                
+                                            <img src="assets/profile/upload.svg" alt="...">
+                
+                                        </li>
+                
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                
+                          </div>
+
+                          <div class="card mt-5">
+
+                            <div class="card-body">
+                
+                                <div class="row">
+                
+                                    <div class="col-2">
+                
+                                        <img class="img-thumbnail" src="assets/profile/choong-soo.png" alt="...">
+                
+                                    </div>
+                
+                                    <div class="col-10 align-self-center">
+                
+                                        <p><b>Choong-Soo</b><span class="user" style="color:gray">@ChoongSL • September 2</span></p>
+                
+                                        <p>On campus (September 2, 2021 at 09:53AM)</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:inherit">
+                
+                                            <img src="assets/profile/chat-right.svg" alt="...">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                
+                                            <img src="assets/profile/recycle.svg" alt="..."> 
+                
+                                        </li> 
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn" style="margin-left:-10px;">
+                
+                                            <img src="assets/profile/heart.svg" alt="..." style="color:red">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                
+                                            <img src="assets/profile/upload.svg" alt="...">
+                
+                                        </li>
+                
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                
+                          </div>
+                
+                
+                
+                        <div class="card mt-3">
+                
+                            <div class="card-body">
+                
+                                <div class="row">
+                
+                                    <div class="col-2">
+                
+                                        <img class="img-thumbnail" src="assets/profile/choong-soo.png" alt="...">
+                
+                                    </div>
+                
+                                    <div class="col-10 align-self-center">
+                
+                                        <p><b>Choong-Soo</b><span class="user" style="color:gray">@ChoongSL • September 1</span></p>
+                
+                                        <p>Off campus (September 1, 2021 at 04:23PM)</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:inherit">
+                
+                                            <img src="assets/profile/chat-right.svg" alt="...">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                
+                                            <img src="assets/profile/recycle.svg" alt="..."> 
+                
+                                        </li> 
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn" style="margin-left:-10px;">
+                
+                                            <img src="assets/profile/heart.svg" alt="..." style="color:red">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                
+                                            <img src="assets/profile/upload.svg" alt="...">
+                
+                                        </li>
+                
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                
+                          </div>
+                
+                          <div class="card mt-3">
+
+                            <div class="card-body">
+                
+                                <div class="row">
+                
+                                    <div class="col-2">
+                
+                                        <img class="img-thumbnail" src="assets/profile/choong-soo.png" alt="...">
+                
+                                    </div>
+                
+                                    <div class="col-10 align-self-center">
+                
+                                        <p><b>Choong-Soo</b><span class="user" style="color:gray">@ChoongSL • September 1</span></p>
+                
+                                        <p>On campus (September 1, 2021 at 09:49AM)</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:inherit">
+                
+                                            <img src="assets/profile/chat-right.svg" alt="...">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                
+                                            <img src="assets/profile/recycle.svg" alt="..."> 
+                
+                                        </li> 
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn" style="margin-left:-10px;">
+                
+                                            <img src="assets/profile/heart.svg" alt="..." style="color:red">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                
+                                            <img src="assets/profile/upload.svg" alt="...">
+                
+                                        </li>
+                
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                
+                          </div>
+
                     </div>
                     <div class="tab-pane fade" id="slimes-and-replies" role="tabpanel" aria-labelledby="pills-slimes-and-replies-tab">
-                        <p>    9. On campus (September 1, 2021 at 09:49AM)
+                        <div class="card mt-3">
 
-                            September 1
-                      
-                            0 replies
-                            0 reslimes
-                            0 favorites
-                      
-                          10. Off campus (September 1, 2021 at 04:23PM)
-                      
-                            September 1
-                      
-                            0 replies
-                            0 reslimes
-                            0 favorites
-                      
-                          11. On campus (September 2, 2021 at 09:53AM)
-                      
-                            September 2
-                      
-                            0 replies
-                            0 reslimes
-                            0 favorites
-                      
-                          12. Off campus (September 2, 2021 at 04:35PM)
-                      
-                            September 2
-                      
-                            0 replies
-                            0 reslimes
-                            0 favorites
-                      
-                          13. On campus (September 3, 2021 at 09:37AM)
-                      
-                            September 3
-                      
-                            0 replies
-                            0 reslimes
-                            0 favorites
-                      
-                          14. Off campus (September 3, 2021 at 02:35PM)
-                      
-                            September 3
-                      
-                            0 replies
-                            0 reslimes
-                            0 favorites
-                      
-                          15. On campus (September 6, 2021 at 09:41AM)
-                      
-                            1 hour ago
-                      
-                            0 replies
-                            0 reslimes
-                            0 favorites</p>
-                        </div>
+                            <div class="card-body">
+                
+                                <div class="row">
+                
+                                    <div class="col-2">
+                
+                                        <img class="img-thumbnail" src="assets/profile/choong-soo.png" alt="...">
+                
+                                    </div>
+                
+                                    <div class="col-10 align-self-center">
+                
+                                        <p><b>Choong-Soo</b><span class="user" style="color:gray">@ChoongSL • 1hr</span></p>
+                
+                                        <p>On campus (September 3, 2021 at 09:41PM)</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:inherit">
+                
+                                            <img src="assets/profile/chat-right.svg" alt="...">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                
+                                            <img src="assets/profile/recycle.svg" alt="..."> 
+                
+                                        </li> 
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn" style="margin-left:-10px;">
+                
+                                            <img src="assets/profile/heart.svg" alt="..." style="color:red">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                
+                                            <img src="assets/profile/upload.svg" alt="...">
+                
+                                        </li>
+                
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                
+                          </div>
+                
+                        <div class="card mt-3">
+                
+                            <div class="card-body">
+                
+                                <div class="row">
+                
+                                    <div class="col-2">
+                
+                                        <img class="img-thumbnail" src="assets/profile/choong-soo.png" alt="...">
+                
+                                    </div>
+                
+                                    <div class="col-10 align-self-center">
+                
+                                        <p><b>Choong-Soo</b><span class="user" style="color:gray">@ChoongSL • September 3</span></p>
+                
+                                        <p>Off campus (September 3, 2021 at 02:35PM)</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:inherit">
+                
+                                            <img src="assets/profile/chat-right.svg" alt="...">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                
+                                            <img src="assets/profile/recycle.svg" alt="..."> 
+                
+                                        </li> 
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn" style="margin-left:-10px;">
+                
+                                            <img src="assets/profile/heart.svg" alt="...">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                
+                                            <img src="assets/profile/upload.svg" alt="...">
+                
+                                        </li>
+                
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                
+                          </div>
+                
+                        <div class="card mt-3">
+                
+                            <div class="card-body">
+                
+                                <div class="row">
+                
+                                    <div class="col-2">
+                
+                                        <img class="img-thumbnail" src="assets/profile/choong-soo.png" alt="...">
+                
+                                    </div>
+                
+                                    <div class="col-10 align-self-center">
+                
+                                        <p><b>Choong-Soo</b><span class="user" style="color:gray">@ChoongSL • September 2</span></p>
+                
+                                        <p>On campus (September 3, 2021 at 09:37PM)</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:inherit">
+                
+                                            <img src="assets/profile/chat-right.svg" alt="...">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                
+                                            <img src="assets/profile/recycle.svg" alt="..."> 
+                
+                                        </li> 
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn" style="margin-left:-10px;">
+                
+                                            <img src="assets/profile/heart.svg" alt="..." style="color:red">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                
+                                            <img src="assets/profile/upload.svg" alt="...">
+                
+                                        </li>
+                
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                
+                          </div>
+
+                          <div class="card mt-3">
+
+                            <div class="card-body">
+                
+                                <div class="row">
+                
+                                    <div class="col-2">
+                
+                                        <img class="img-thumbnail" src="assets/profile/choong-soo.png" alt="...">
+                
+                                    </div>
+                
+                                    <div class="col-10 align-self-center">
+                
+                                        <p><b>Choong-Soo</b><span class="user" style="color:gray">@ChoongSL • September 2</span></p>
+                
+                                        <p>Off campus (September 2, 2021 at 04:53PM)</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:inherit">
+                
+                                            <img src="assets/profile/chat-right.svg" alt="...">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                
+                                            <img src="assets/profile/recycle.svg" alt="..."> 
+                
+                                        </li> 
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn" style="margin-left:-10px;">
+                
+                                            <img src="assets/profile/heart.svg" alt="..." style="color:red">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                
+                                            <img src="assets/profile/upload.svg" alt="...">
+                
+                                        </li>
+                
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                
+                          </div>
+
+                          <div class="card mt-5">
+
+                            <div class="card-body">
+                
+                                <div class="row">
+                
+                                    <div class="col-2">
+                
+                                        <img class="img-thumbnail" src="assets/profile/choong-soo.png" alt="...">
+                
+                                    </div>
+                
+                                    <div class="col-10 align-self-center">
+                
+                                        <p><b>Choong-Soo</b><span class="user" style="color:gray">@ChoongSL • September 2</span></p>
+                
+                                        <p>On campus (September 2, 2021 at 09:53AM)</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:inherit">
+                
+                                            <img src="assets/profile/chat-right.svg" alt="...">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                
+                                            <img src="assets/profile/recycle.svg" alt="..."> 
+                
+                                        </li> 
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn" style="margin-left:-10px;">
+                
+                                            <img src="assets/profile/heart.svg" alt="..." style="color:red">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                
+                                            <img src="assets/profile/upload.svg" alt="...">
+                
+                                        </li>
+                
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                
+                          </div>
+                
+                
+                
+                        <div class="card mt-3">
+                
+                            <div class="card-body">
+                
+                                <div class="row">
+                
+                                    <div class="col-2">
+                
+                                        <img class="img-thumbnail" src="assets/profile/choong-soo.png" alt="...">
+                
+                                    </div>
+                
+                                    <div class="col-10 align-self-center">
+                
+                                        <p><b>Choong-Soo</b><span class="user" style="color:gray">@ChoongSL • September 1</span></p>
+                
+                                        <p>Off campus (September 1, 2021 at 04:23PM)</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:inherit">
+                
+                                            <img src="assets/profile/chat-right.svg" alt="...">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                
+                                            <img src="assets/profile/recycle.svg" alt="..."> 
+                
+                                        </li> 
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn" style="margin-left:-10px;">
+                
+                                            <img src="assets/profile/heart.svg" alt="..." style="color:red">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                
+                                            <img src="assets/profile/upload.svg" alt="...">
+                
+                                        </li>
+                
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                
+                          </div>
+                
+                          <div class="card mt-3">
+
+                            <div class="card-body">
+                
+                                <div class="row">
+                
+                                    <div class="col-2">
+                
+                                        <img class="img-thumbnail" src="assets/profile/choong-soo.png" alt="...">
+                
+                                    </div>
+                
+                                    <div class="col-10 align-self-center">
+                
+                                        <p><b>Choong-Soo</b><span class="user" style="color:gray">@ChoongSL • September 1</span></p>
+                
+                                        <p>On campus (September 1, 2021 at 09:49AM)</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-right:1px; margin-left:inherit">
+                
+                                            <img src="assets/profile/chat-right.svg" alt="...">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:-10px">
+                
+                                            <img src="assets/profile/recycle.svg" alt="..."> 
+                
+                                        </li> 
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn" style="margin-left:-10px;">
+                
+                                            <img src="assets/profile/heart.svg" alt="..." style="color:red">
+                
+                                        </li>
+                
+                                    <p style="display:inline-block">0</p>
+                
+                                    </div>
+                
+                                    <div class="col-sm-2">
+                
+                                        <li class="btn btn-outline-secondary:focus" style="margin-left:200px">
+                
+                                            <img src="assets/profile/upload.svg" alt="...">
+                
+                                        </li>
+                
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                
+                          </div>
+
+                    </div>
                     <div class="tab-pane fade" id="favorites" role="tabpanel" aria-labelledby="pills-favorites-tab">
-                        <!-- TODO, center text vertically alignment-->
-                        <p class="fs-3 text-muted"> Choong-Soo Lee does not have any favorites</p>
+                        <h2 class="text-muted text-center mt-5">Choong-Soo Lee does not have any favorites</h2>
                     </div>
                 </div>
             </div>   

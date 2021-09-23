@@ -1,17 +1,60 @@
-/*
-What the "slime" will look like
+/* NOTE: Although only slightly different from one another, the slime/copmose wrappers and containers are
+ * my way of designing th
 */
+
+/*What the "slime" frame will look like*/
 .slime-wrapper {
-  border-bottom: 3px solid #e6ecf0;
-  border-top: 3px solid #e6ecf0;
-  border-left: 3px solid #e6ecf0;
-  border-right: 3px solid #e6ecf0;
-  max-width:40%;
-  margin-left:30%;
-  margin-top: 1%;
+  border: 3px solid #e6ecf0;
+  width:30%;
+  margin-left:35%;
   margin-bottom:50px;
   border-radius:10px;
   padding: 18px;
+}
+
+.slime-wrapper-profile {
+  border: 3px solid #e6ecf0;
+  width:75%;
+  margin-left:35%;
+  margin-bottom:50px;
+  border-radius:10px;
+  padding: 18px;
+}
+
+/*Creating a bordered window around the slime*/
+.slime-imgcontain {
+  border: 3px solid #e6ecf0;
+  max-width:50%;
+  background: #fff;
+  margin-left:inherit;
+  margin-top: 15%;
+  margin-bottom:20%;
+  border-radius:10px;
+  padding: 10px;
+  
+}
+
+/*Adjusting certain elements slightly to fit the compsure frame*/
+.compose-imgcontain {
+  border: 3px solid #e6ecf0;
+  max-width:50%;
+  background: #fff;
+  margin-left:80%;
+  margin-top: inherit;
+  margin-bottom:inherit;
+  border-radius:10px;
+  padding: 10px;
+}
+
+/*see .compose-imgcontain*/
+.compose-textcontain {
+  border: 3px solid #e6ecf0;
+  max-width:25%;
+  max-height:200px;
+  background: #fff;
+  margin:inherit;
+  border-radius:10px;
+  padding: 10px;
 }
 
 /*
@@ -19,8 +62,7 @@ Editing the layout of the tweet text
 */
 .slime-wrapper p {
   font-size: 15px;
-  font-weight:normal;
-  text-align:center;
+  font-weight:600;
 }
 
 .user {
@@ -29,96 +71,18 @@ Editing the layout of the tweet text
   margin-left:20px;
 }
 
-.slime-wrapper button{
-  margin-left: 40px;
+.icon-green {
+  color:#198754;
 }
 
-.slime-imgcontain {
-  border-bottom: 3px solid #e6ecf0;
-  border-top: 3px solid #e6ecf0;
-  border-left: 3px solid #e6ecf0;
-  border-right: 3px solid #e6ecf0;
-  max-width:50%;
-  background: #fff;
-  margin-left:inherit;
-  margin-top: 15%;
-  margin-bottom:20%;
-  border-radius:10px;
-  padding: 10px;
+.icon-red {
+  color:#dc3545;
 }
 
-.slime-txtcontain {
-  margin-left:inherit;
+.icon-blue{
+  color: #0dcaf0;
 }
 
-.slime-img {
-  margin-left:1%;
-  max-width:100%;
-  margin-top:10%;
-}
-
-
-
-.compose-header {
-  max-width:100%;
-  background: #fff;
-  margin-top: 10%;
-  margin-left:0%;
-  margin-bottom:50%px;
-  padding: 18px;
-}
-
-/*
-What the "compose" will look like
-*/
-.compose-wrapper {
-  max-width:100%;
-  background: #fff;
-  margin-top: 50px;
-  margin-left:5%;
-  margin-bottom:50px;
-  padding: 18px;
-}
-
-.compose-imgcontain {
-  border-bottom: 3px solid #e6ecf0;
-  border-top: 3px solid #e6ecf0;
-  border-left: 3px solid #e6ecf0;
-  border-right: 3px solid #e6ecf0;
-  max-width:20%;
-  background: #fff;
-  margin-left:80%;
-  margin-top: 15%;
-  margin-bottom:20%;
-  border-radius:10px;
-  padding: 10px;
-}
-
-.compose-textcontain {
-  border-bottom: 3px solid #e6ecf0;
-  border-top: 3px solid #e6ecf0;
-  border-left: 3px solid #e6ecf0;
-  border-right: 3px solid #e6ecf0;
-  max-width:40%;
-  max-height:200px;
-  background: #fff;
-  margin-left:0px;
-  margin-top: 15%;
-  margin-bottom:20%;
-  border-radius:10px;
-  padding: 10px;
-  text-align:center;
-}
-
-.compose-img {
-  max-width:100%;
-}
-
-.compose-form {
-  max-width: 100%;
-}
-
-.hashtag {
-  color:blue;
-  text-decoration: underline;
+.icon-black{
+  color: black;
 }
